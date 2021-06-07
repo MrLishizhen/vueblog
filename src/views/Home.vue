@@ -73,7 +73,7 @@ export default {
 
   .header{
     width:100%;
-    height:60px;
+    height:80px;
     background: #FFFFFF;
     box-shadow: 0px 3px 8px #E6E6EC;
     .nav-box{
@@ -81,10 +81,12 @@ export default {
       align-items: center;
       justify-content: space-between;
       .logo{
-        width:60px;
-        height:30px;
+        /*width:60px;*/
+        /*height:30px;*/
+        width:54px;
+        height:54px;
         text-indent:-66666px;
-        background:url(../assets/home/logo.png) no-repeat center center/100%;
+        background:url(../assets/home/logo-1.png) no-repeat center center/100%;
       }
       .nav{
         height:100%;
@@ -93,7 +95,7 @@ export default {
           padding:0 15px;
           cursor: pointer;
           height:100%;
-          line-height:60px;
+          line-height:80px;
           position: relative;
           &.hot::before{
             content:"";

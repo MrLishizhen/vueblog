@@ -11,19 +11,53 @@
         <div class="user-box">
             <div class="user-top content">
                 <div class="user-item width604" style="background-color:#fff">
-<!--                    <div class="width404" style="margin-right:16px;"></div>-->
-<!--                    <div class="width184"></div>-->
+                    <div class="user-jj">
+                        <span class="jj-img"></span>
+                        <p class="introduction">
+                            我遁着岁月的足迹，走过散落一地的旖旎，寻找流年深处的一季花雨。
+                        </p>
+                        <span class="name">
+                            晓晗
+                        </span>
+                    </div>
+                    <div class="user-img"></div>
                 </div>
                 <div class="user-item item-right">
-
+                    <div class="user-jj">
+                        <span class="jj-img"></span>
+                        <p class="introduction">
+                            梦想不足以让你到达远方，但是到达远方的人一定要有梦想。
+                        </p>
+                        <span class="name">
+                            秋雨
+                        </span>
+                    </div>
+                    <div class="user-img"></div>
                 </div>
             </div>
             <div class="user-bom content">
-                <div class="user-item width604">
-                    <div class="width184" style="margin-right:16px;"></div>
-                    <div class="width404"></div>
+                <div class="user-item width604" style="padding:0">
+                    <div class="width404">
+                        <div class="riliimg"></div>
+                        <div class="rili">
+                            <span class="date-span" v-text="date">2021/6/7</span>
+                            <span class="date-nl">辛丑年 四月十五</span>
+                        </div>
+                    </div>
+                    <div class="width184" style="margin-left:16px;"></div>
                 </div>
-                <div class="user-item item-right"></div>
+                <div class="user-item item-right">
+                    <div class="user-jj">
+                        <span class="jj-img"></span>
+                        <p class="introduction">
+                            不要在你家里放一件你不知其用，或你认为不美的东西。
+                        </p>
+                        <span class="name">
+                            NeilLeeeee
+                        </span>
+                    </div>
+                    <div class="user-img"></div>
+                </div>
             </div>
         </div>
 
@@ -76,6 +110,7 @@
         data() {
             return {
                 bannerUrl: "",
+                date:'',
                 banner: [
                     {
                         url: '1'
@@ -107,6 +142,19 @@
             //         // this.bannerUrl = data[0].bannerUrl;
             //     }
             // })
+            this.getDate();
+        },
+        methods:{
+            //只在进入组件时加载这个
+            getDate(){
+                let date = new Date();
+                let year = date.getFullYear();
+                let mm  = date.getMonth();
+                let dd = date.getUTCDate();
+                mm<10?mm='0'+(mm+1):mm+1;
+                dd<10?dd='0'+dd:dd;
+                this.date = year+'/'+mm+'/'+dd;
+            }
         }
     }
 </script>
@@ -135,6 +183,8 @@
             height:204px;
             display:flex;
             .user-item{
+                padding:40px;
+                box-sizing: border-box;
                 background-color: #f8f8f8;
                 width:50%;
                 height:100%;
@@ -154,10 +204,78 @@
                 /*    flex-shrink: 0;*/
                 /*    width:604px;*/
                 /*}*/
+                .user-jj{
+                    flex-grow: 1;
+                    display:flex;
+                    flex-direction: column;
+                    margin-right:30px;
+                    .jj-img{
+                        width:30px;
+                        height:26px;
+                        background: url(../../assets/home/icon-dh.png);
+                    }
+                    .introduction{
+                        padding-top:10px;
+                        box-sizing: border-box;
+                        font-size: 16px;
+                        font-weight: normal;
+                        font-height: 24px;
+                        text-align: justify; /* 浏览器可能不支持 */
+                        color: #666666;
+                        height: 48px;
+                        /*line-height:48px;*/
+                    }
+                    .name{
+                        font-size: 22px;
+                        font-weight: 600;
+                        font-height: 30px;
+                        color: #222222;
+                        height:30px;
+                        text-align:left;
+                        padding-top:10px;
+                    }
+                }
+                .user-img{
+                    flex-shrink: 0;
+                    width:120px;
+                    height:120px;
+                    border-radius: 50%;
+                    background-color: #42b983;
+                }
                 .width404{
                     flex-shrink: 0;
                     width:404px;
                     background-color: #fff;
+                    display:flex;
+                    padding:40px;
+                    box-sizing: border-box;
+                    align-items: center;
+                    .riliimg{
+                        width:80px;
+                        height:75px;
+                        flex-shrink: 0;
+                        background:url(../../assets/home/rili.png) no-repeat center center/100%;
+                    }
+                    .rili{
+                        flex-grow: 1;
+                        display:flex;
+                        flex-direction: column;
+                        align-items: start;
+                        justify-content: flex-start;
+                        height:100%;
+                        .date-span{
+                            font-size: 40px;
+                            font-weight: bold;
+                            color: #222222;
+                            height:56px;
+                            line-height:56px;
+
+                        }
+                        .date-nl{
+                            height:24px;
+                            line-height:24px;
+                        }
+                    }
                 }
                 .width184{
                     flex-grow: 1;
