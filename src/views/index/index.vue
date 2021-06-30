@@ -145,7 +145,7 @@
             this.getDate();
         },
         methods:{
-            //只在进入组件时加载这个
+            //只在进入组件时
             getDate(){
                 let date = new Date();
                 let year = date.getFullYear();
@@ -260,7 +260,7 @@
                         flex-grow: 1;
                         display:flex;
                         flex-direction: column;
-                        align-items: start;
+                        align-items: flex-start;
                         justify-content: flex-start;
                         height:100%;
                         .date-span{
