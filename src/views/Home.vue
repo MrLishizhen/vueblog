@@ -43,7 +43,9 @@ export default {
       if(res.status==200){
         let data = res.data;
         data.forEach((item,i)=>{
-          if(i==0){
+          // console.log(this.$router);
+          let path = this.$route.path;
+          if(path.indexOf(item.icon)>-1){
             item.hot=true;
           }else{
             item.hot=false;
@@ -57,12 +59,21 @@ export default {
   components: {},
   methods:{
     //点击切换路由
-    navClick(i){
+    navClick(i,hotChild){
       this.nav.forEach((item,i)=>{
         item.hot=false;
       })
-      this.nav[i].hot=true;
-      this.$router.push("/Index"+this.nav[i].icon);
+
+      if(!hotChild){
+
+        this.nav[i].hot=true;
+        this.$router.push("/Index"+this.nav[i].icon);
+      }else{
+        this.nav.find(item=>item.icon=='/technology').hot=true;
+        this.$router.push("/Index/technology");
+      }
+
+
     }
   }
 };
@@ -70,11 +81,20 @@ export default {
 <style lang="less" scoped>
 .home{
   background: #FFFFFF;
-
+  box-sizing: border-box;
+  height:100%;
+  .home_box{
+    min-height:calc(100%  - 317px);
+    padding-top:80px;
+    box-sizing: border-box;
+  }
   .header{
     width:100%;
     height:80px;
     background: #FFFFFF;
+    position:fixed;
+    top:0;
+    left:0;
     box-shadow: 0px 3px 8px #E6E6EC;
     .nav-box{
       display:flex;

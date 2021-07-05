@@ -12,7 +12,11 @@ li {
 a {
     color: #666;
 }
-body,html{
+/*html{*/
+/*    height:100%;*/
+/*}*/
+html,body{
+    height:100%;
     width:100%;
     min-width:1184px;
 }

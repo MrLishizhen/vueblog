@@ -80,7 +80,7 @@
                         </div>
                     </div>
                     <div class="seemore">
-                        <router-link class="seemore-btn" to="/">查看更多</router-link>
+                        <div class="seemore-btn" @click="pushPath">查看更多</div>
                     </div>
                 </div>
                 <div class="list-right">
@@ -154,6 +154,10 @@
                 mm<10?mm='0'+(mm+1):mm+1;
                 dd<10?dd='0'+dd:dd;
                 this.date = year+'/'+mm+'/'+dd;
+            },
+            pushPath(){
+                //调用父集方法3
+                this.$parent.navClick(1,true)
             }
         }
     }
