@@ -40,7 +40,13 @@ const routes = [
                 {
                     path:"technology",
                     component:technology
-                }
+                },
+                {
+                    path: '/article',
+                    name: 'article',
+                    component: () =>
+                        import ('@/views/components/Article/index'),
+                },
               ]
     },
 
