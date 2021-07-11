@@ -8,6 +8,7 @@
 <!--                </div>-->
 <!--            </div>-->
 <!--        </div>-->
+
         <div class="user-box">
             <div class="user-top content">
                 <div class="user-item width604" style="background-color:#fff">
