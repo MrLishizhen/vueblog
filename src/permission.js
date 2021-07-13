@@ -3,7 +3,7 @@ import NProgress from "nprogress"; // progress bar
 import "nprogress/nprogress.css"; // progress bar style
 NProgress.configure({ showSpinner: false });
 router.beforeEach(async (to, from, next) => {
-    NProgress.inc();
+    NProgress.start();
     next();
 
 });
